@@ -1,6 +1,9 @@
 package guru.springframework.msscbeerservice.services;
 
 import guru.springframework.msscbeerservice.web.model.BeerDto;
+import guru.springframework.msscbeerservice.web.model.BeerPagedList;
+import guru.springframework.msscbeerservice.web.model.BeerStyleEnum;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;
 
@@ -8,6 +11,8 @@ import java.util.UUID;
  * Created by Luca Moro on 23/01/2021 on 17:31
  */
 public interface BeerService {
+    BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest);
+
     BeerDto getById(UUID beerId);
 
     BeerDto saveNewBeer(BeerDto beerDto);
