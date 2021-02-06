@@ -2,6 +2,7 @@ package guru.springframework.msscbeerservice.bootstrap;
 
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
 /**
  * Created By Luca Moro on 16/01/2021 15:29
  */
+@RequiredArgsConstructor
 @Component
 public class BeerLoader implements CommandLineRunner {
 
@@ -24,10 +26,6 @@ public class BeerLoader implements CommandLineRunner {
 
 
     private final BeerRepository beerRepository;
-
-    public BeerLoader(BeerRepository beerRepository) {
-        this.beerRepository = beerRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
